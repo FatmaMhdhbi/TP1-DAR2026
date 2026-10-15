@@ -24,7 +24,6 @@ public class Client {
         DataInputStream dis = new DataInputStream(is);
         int xx = dis.readInt();
         System.out.println("Result recu du serveur : " + xx);
-
         dis.close();
         dos.close();
         socket.close();

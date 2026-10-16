@@ -1,3 +1,4 @@
+
 package clientPackage;
 
 import java.io.*;
@@ -6,24 +7,36 @@ import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) throws IOException {
-        System.out.println("Je suis un client pas encore connecté…");
 
         Socket socket = new Socket("localhost", 1234);
-        System.out.println("je suis un client connecté");
+        System.out.println("Je suis un client connecté");
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("enter un entier x :");
-        int x = scanner.nextInt();
 
-        OutputStream os = socket.getOutputStream();
-        DataOutputStream dos = new DataOutputStream(os);
-        dos.writeInt(x);
-        System.out.println("Nombre envoyé au serveur :" + x);
+        DataOutputStream dos =
+                new DataOutputStream(socket.getOutputStream());
 
-        InputStream is = socket.getInputStream();
-        DataInputStream dis = new DataInputStream(is);
-        int xx = dis.readInt();
-        System.out.println("Result recu du serveur : " + xx);
+        DataInputStream dis =
+                new DataInputStream(socket.getInputStream());
+
+        int x;
+
+        do {
+            System.out.print("Entrez un entier x (0 pour quitter) : ");
+            x = scanner.nextInt();
+
+            dos.writeInt(x);
+
+            if (x != 0) {
+                int resultat = dis.readInt();
+                System.out.println("Résultat reçu du serveur : "
+                        + resultat);
+            }
+
+        } while (x != 0);
+
+        System.out.println("Fin de la communication.");
+
         dis.close();
         dos.close();
         socket.close();

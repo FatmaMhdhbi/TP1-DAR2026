@@ -4,7 +4,6 @@ TP1-DAR2026 — Développement d’applications réparties
 Niveau : LSI3  
 Année universitaire : 2026–2027
 
----
 
  Activité 1-1 : Première connexion Client/Serveur
 
@@ -70,25 +69,17 @@ Après chaque saisie, le client envoie le nombre au serveur, reçoit le résulta
 
 Le traitement continue tant que le client saisit un entier différent de 0. Lorsque le client saisit 0, la communication s’arrête et les sockets sont fermées des deux côtés.
 
- 5. Captures d’écran
+ 4. Captures d’écran
 
- 5.1. Serveur en attente d’un client
+ 4.1. Calculs effectués côté serveur
 
-Insérer ici la capture d’écran du serveur lancé avant le client.
+![Calcul de serveur](captures/serveur4.png)
 
- 5.2. Calculs effectués côté serveur
+ 4.2. Résultats affichés côté client
 
-Insérer ici la capture d’écran montrant les entiers reçus et les calculs effectués par le serveur.
+![Calcul de serveur](captures/client3.png)
 
- 5.3. Résultats affichés côté client
 
-Insérer ici la capture d’écran du client affichant les résultats des différents calculs, notamment pour une valeur positive et une valeur négative.
-
- 5.4. Fin de la communication
-
-Insérer ici les captures d’écran montrant la saisie de `0` et la fermeture de la communication côté client et côté serveur.
-
----
 
  Conclusion générale
 

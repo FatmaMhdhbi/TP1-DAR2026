@@ -31,17 +31,15 @@ Lorsque la connexion est établie, le serveur et le client affichent des message
 
  4.1. Serveur en attente d’une connexion
 
-Insérer ici la capture d’écran du serveur en attente d’un client.
+![Serveur en attente](captures/serveur1.png)
 
  4.2. Client connecté
 
-Insérer ici la capture d’écran du client après l’établissement de la connexion.
+![Client en attente](captures/Client.png)
 
  4.3. Connexion établie
 
-Insérer ici la capture d’écran du serveur indiquant qu’un client est connecté.
-
----
+![Connexion au serveur](captures/serveur2.png)
 
  Activité 1-2 : Service de multiplication
 

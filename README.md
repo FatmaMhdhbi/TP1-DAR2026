@@ -1,47 +1,103 @@
 TP1-DAR2026 — Développement d’applications réparties
 
-Étudiant :Fatma Mhadhbi  
-Niveau  LSI3  
+Étudiant : Fatma Mhadhbi  
+Niveau : LSI3  
 Année universitaire : 2026–2027
+
+---
 
  Activité 1-1 : Première connexion Client/Serveur
 
- Objectif
-Établir une connexion entre un client et un serveur en Java en utilisant les sockets TCP.
+ 1. Objectif
 
- Structure du projet
-- "src/clientPackage/Client.java" : application cliente.
-- "src/serverPackage/Server.java" : application serveur.
+L’objectif de cette activité est d’établir une connexion entre un client et un serveur en Java en utilisant les sockets TCP.
 
- Fonctionnement
-Le serveur utilise un 'ServerSocket' sur le port 1234 et attend la connexion d’un client avec 'accept()'. Le client se connecte au serveur en utilisant 'localhost' et le port 1234.
+ 2. Structure du projet
 
-Captures d’écran
-Ajouter ici :
-- Capture du serveur en attente d’une connexion.
-- Capture du client connecté.
-- Capture du serveur après l’établissement de la connexion.
+Le projet contient deux packages principaux :
+
+- src/clientPackage/Client.java : application cliente.
+- src/serverPackage/Server.java : application serveur.
+
+ 3. Fonctionnement
+
+Le serveur utilise un objet ServerSocket sur le port 1234 et attend la connexion d’un client grâce à la méthode accept().
+
+Le client établit une connexion avec le serveur en utilisant l’adresse localhost et le port 1234.
+
+Lorsque la connexion est établie, le serveur et le client affichent des messages de confirmation dans leurs consoles respectives.
+
+ 4. Captures d’écran
+
+ 4.1. Serveur en attente d’une connexion
+
+Insérer ici la capture d’écran du serveur en attente d’un client.
+
+ 4.2. Client connecté
+
+Insérer ici la capture d’écran du client après l’établissement de la connexion.
+
+ 4.3. Connexion établie
+
+Insérer ici la capture d’écran du serveur indiquant qu’un client est connecté.
+
+---
 
  Activité 1-2 : Service de multiplication
 
- Objectif
-Permettre au client d’envoyer un entier au serveur, qui calcule son produit par 5 et renvoie le résultat.
+ 1. Objectif
 
- Fonctionnement
-1. Le client saisit un entier x.
-2. Le client envoie x au serveur avec DataOutputStream.
-3. Le serveur reçoit le nombre avec DataInputStream.
-4. Le serveur calcule x * 5.
-5. Le serveur renvoie le résultat au client.
-6. Le client affiche le résultat reçu.
+L’objectif de cette activité est d’étendre l’application Client/Serveur développée dans l’Activité 1-1 afin d’ajouter un service de multiplication exécuté côté serveur.
 
- Tests
-Ajouter les captures d’écran des tests avec différentes valeurs, notamment une valeur positive, une valeur négative et zéro.
+Le serveur reçoit un entier envoyé par le client, calcule son produit par 5 et renvoie le résultat au client.
 
- Captures d’écran
-Ajouter ici :
-- Capture du serveur pendant le calcul.
-- Capture du client affichant le résultat.
+ 2. Fonctionnement
 
- Conclusion
-Cette première partie du TP permet de comprendre la communication client/serveur en Java à l’aide des sockets TCP et l’échange de données entières entre les deux applications.
+Le traitement s’effectue selon les étapes suivantes :
+
+1. Le client saisit un entier x au clavier.
+2. Le client envoie cet entier au serveur à l’aide de DataOutputStream.
+3. Le serveur reçoit le nombre à l’aide de DataInputStream.
+4. Le serveur calcule le produit x * 5.
+5. Le serveur envoie le résultat au client.
+6. Le client reçoit et affiche le résultat.
+
+Les classes DataInputStream et DataOutputStream permettent l’échange d’entiers entre les deux applications, y compris les valeurs négatives.
+
+ 3. Communication répétée
+
+L’application est améliorée pour permettre au client de saisir plusieurs entiers successivement.
+
+Après chaque saisie, le client envoie le nombre au serveur, reçoit le résultat de la multiplication par 5 et l’affiche.
+
+Le traitement continue tant que le client saisit un entier différent de 0. Lorsque le client saisit 0, la communication s’arrête et les sockets sont fermées des deux côtés.
+
+ 5. Captures d’écran
+
+ 5.1. Serveur en attente d’un client
+
+Insérer ici la capture d’écran du serveur lancé avant le client.
+
+ 5.2. Calculs effectués côté serveur
+
+Insérer ici la capture d’écran montrant les entiers reçus et les calculs effectués par le serveur.
+
+ 5.3. Résultats affichés côté client
+
+Insérer ici la capture d’écran du client affichant les résultats des différents calculs, notamment pour une valeur positive et une valeur négative.
+
+ 5.4. Fin de la communication
+
+Insérer ici les captures d’écran montrant la saisie de `0` et la fermeture de la communication côté client et côté serveur.
+
+---
+
+ Conclusion générale
+
+Ce TP a permis de découvrir et de mettre en pratique la communication Client/Serveur en Java à l’aide des sockets TCP.
+
+L’Activité 1-1 a permis d’établir une première connexion entre un client et un serveur.
+
+L’Activité 1-2 a permis d’étendre cette communication en ajoutant un service de multiplication exécuté côté serveur. L’utilisation de `DataInputStream` et de `DataOutputStream` a permis d’échanger des entiers entre les deux applications.
+
+Ces activités constituent une première étape dans la compréhension des applications réparties et de la communication entre processus à travers le réseau.
